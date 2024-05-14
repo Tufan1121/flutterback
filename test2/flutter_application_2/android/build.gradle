@@ -1,0 +1,26 @@
+// Este es el archivo build.gradle a nivel de proyecto, no a nivel de módulo de aplicación.
+
+buildscript {
+    ext.kotlin_version = '1.5.31' // Especifica aquí la versión de Kotlin que deseas usar.
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.0.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        // Agrega aquí otras dependencias de classpath necesarias para tu proyecto.
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}
+
